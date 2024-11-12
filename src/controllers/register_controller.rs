@@ -8,16 +8,8 @@ mod user_model;
 use user_model::User;
 
 pub async fn register(user: web::Json<User>) -> Result<impl Responder, Box<dyn Error>> {
-    let password_hash = argon2i_simple(&user.password, "salt");
-
-    let user_with_hash = User {
-        password_hash,
-        ..user.into_inner()
-    };
-
-    let mut wrt = WriterBuilder::new().from_path("./src/data/data.csv")?;
-    wrt.serialize(&user_with_hash)?;
+    let mut wrt = WriterBuilder::new().from_path("../data/data.csv")?;
+    wrt.serialize(&*user)?;
     wrt.flush()?;
-
     Ok(HttpResponse::Ok().body("Kullanıcı kaydedildi"))
 }
