@@ -1,6 +1,6 @@
 use actix_web::web;
 //controllers
-#[path = "../../src/controllers/register_controller.rs"] //register
+#[path = "../../src/controllers/register_controller.rs"]
 mod register_controller;
 use register_controller::register;
 #[path = "../../src/controllers/login_controller.rs"]

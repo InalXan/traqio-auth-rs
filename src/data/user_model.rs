@@ -1,10 +1,10 @@
 use serde::{Deserialize, Serialize};
 
-#[derive(Debug, Serialize, Deserialize)]
+#[derive(Debug, Deserialize, Serialize)]
 pub struct User {
     pub fullname: String,
     pub username: String,
-    pub number: String,
     pub email: String,
-    pub password: String,
+    pub number: String,
+    pub password_hash: String,
 }
