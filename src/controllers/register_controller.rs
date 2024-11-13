@@ -35,11 +35,12 @@ pub async fn register(user: web::Json<RegisterRequest>) -> Result<impl Responder
         email: user.email.clone(),
         number: user.number.clone(),
         password_hash,
+        salt,
     };
 
     let mut wrt = WriterBuilder::new().from_path("./src/data/data.csv")?;
     wrt.serialize(&user_with_hash)?;
     wrt.flush()?;
 
-    Ok(HttpResponse::Ok().body("Kullanıcı kaydedildi"))
+    Ok(HttpResponse::Ok().body("user register successfully <3"))
 }

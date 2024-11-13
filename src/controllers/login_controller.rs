@@ -21,12 +21,12 @@ pub async fn login(login_data: web::Json<LoginRequest>) -> Result<impl Responder
 
         // acces password and login
         if user.username == login_data.username {
-            let attempt_hash_bytes = argon2i_simple(&login_data.password, "salt");
+            let attempt_hash_bytes = argon2i_simple(&login_data.password, &user.salt);
             let attempt_hash = hex::encode(attempt_hash_bytes);
             if user.password_hash == attempt_hash {
-                return Ok(HttpResponse::Ok().body("Giriş başarılı"));
+                return Ok(HttpResponse::Ok().body("Login Succesfully"));
             }
         }
     }
-    Ok(HttpResponse::Unauthorized().body("Geçersiz kullanıcı adı veya şifre"))
+    Ok(HttpResponse::Unauthorized().body("Username or password is wrong"))
 }

@@ -1,2 +1,2 @@
-fullname,username,email,number,password_hash
-dusu duseynov,asd,duson@gmail.com,+234234234,6da115d2722e909d40f3e2c46813f29424a399542b7913c5cb2c11461ac74cba
+fullname,username,email,number,password_hash,salt
+Atilla atilla,atilla23,ation@gmail.com,+34234234234,88b350a155d2089782d32f8b0357ef43e87285d66f27db91f0576bee6a57c3b9,54edeef1-0989-4b2c-aca8-d3279a8356f9
