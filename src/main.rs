@@ -1,5 +1,5 @@
 use actix_web::{App, HttpServer};
-// router
+// routes
 #[path = "../src/router/index.rs"]
 mod index;
 use index::configure_router;
