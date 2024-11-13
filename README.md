@@ -18,10 +18,10 @@ cargo run
 ```
 # Testing Project
 ## Register Function
-[![Register Function](./guide/register.png)]
+[![Register Function](guide/register.png)]
 
 ## Login Function
-[![Login Function](./guide/login.png)]
+[![Login Function](guide/login.png)]
 
 ## User Data
-[![User Data](./guide/data.png)]
+[![User Data](guide/data.png)]
